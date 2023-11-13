@@ -29,8 +29,8 @@ char *conItoA(int number)
 {
 	unsigned int n;
 	int length = numberlen(number);
-	/ pointer to hold the string /
-		char *buffer = malloc(sizeof(char) * (length + 1));
+	/* pointer to hold the string */
+	char *buffer = malloc(sizeof(char) * (length + 1));
 
 	if (buffer == NULL)
 	{

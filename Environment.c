@@ -23,5 +23,5 @@ void environment(void)
 			exit(EXIT_FAILURE);
 		}
 		env++;
-        }
+	}
 }
