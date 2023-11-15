@@ -7,22 +7,18 @@
  * Return: Always success
  */
 
-char *get_environment(const char *environment_name)
+char *get_environment(const char *env_name)
 {
-	int amount;
-	int length = 0;
-	char *environment;
+	int len = 0;
+	int i;
+	char *_env;
 
-	for (amount = 0; environ[amount]; amount++)
+	for (i = 0; environ[i]; i++)
 	{
-		environment = environ[amount];
-		length = strlen(environment_name);
-
-		if (strncmp(environment, environment_name, length) == 0
-				&& environment[length] == '=')
-		{
-			return (&environment[length + 1]);
-		}
+		_env = environ[i];
+		len = strlen(env_name);
+		if (strncmp(_env, env_name, len) == 0 && _env[len] == '=')
+			return (&_env[len + 1]);
 	}
 	return (NULL);
 }

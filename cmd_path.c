@@ -9,7 +9,7 @@
 
 int cmd_topath(char *cmd, char *cmdPath)
 {
-	char *str_path = get_environment("PATH");
+	char *str_path = getenv("PATH");
 	char *str_pathCpy;
 	/* This is the memory allocated to store the path */
 	char *str_pathTok;

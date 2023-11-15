@@ -19,6 +19,7 @@ ssize_t ksget_line(char **line, size_t *len, FILE *stream)
 		return (-1);
 	if (*line == NULL || len == 0)
 	{
+		free(*line);
 		*line = (char *)malloc(HIGHEST_CMD_ARG);
 		if (*line == NULL)
 			return (-1);

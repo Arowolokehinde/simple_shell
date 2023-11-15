@@ -11,7 +11,7 @@
  */
 void take_input(basicshell *parameter, size_t *len)
 {
-	ssize_t readIn = ksget_line(&(parameter->cmd_in), len, stdin);
+	ssize_t readIn = getline(&(parameter->cmd_in), len, stdin);
 	char *trim_cmd = parameter->cmd_in;
 
 	if (readIn == -1)

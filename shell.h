@@ -29,7 +29,7 @@ extern char **environ;
  * @res_counts: result counts
  * @out_status: output status
  */
-typedef struct bokangsh
+typedef struct kennyshell
 {
 	char *cmd_in;/* User command input*/
 	char **avec;/*main argument vector*/
@@ -40,29 +40,32 @@ typedef struct bokangsh
 } basicshell;
 
 basicshell init_basicshell(char **avec);
+void show_prompt(basicshell *parameter);
+int execute_prompt(basicshell *parameter);
+void take_input(basicshell *parameter, size_t *len);
+char **argument_Tok(char *cmd);
+void free_argument(char **str);
+
+int fork_shell(char *cmd, char **argument, char *cmd_in);
+void print_string(const char *input);
+void showthis(void);
+
+
 int numberlen(int number);
 char *conItoA(int number);
 
-char **argument_Tok(char *cmd);
-void take_input(basicshell *parameter, size_t *len);
-void environment(void);
-int cmd_topath(char *cmd, char *cmdPath);
-void free_argument(char **str);
-
 
 ssize_t ksget_line(char **line, size_t *len, FILE *stream);
-int execute_err(char *cmd, char *cmd_in, int amounts);
-char *get_environment(const char *environment_name);
-int execute_start(const char *pathbuffer);
-
-
-void exit_shell(void);
-int execute_prompt(basicshell *parameter);
 void resize_buffer(char **line, size_t *len, size_t nsize);
-void showthis(void);
-void print_string(const char *input);
+
+int cmd_topath(char *cmd, char *cmdPath);
+int execute_start(const char *pathbuffer);
+void exit_shell(void);
+void environment(void);
+char *get_environment(const char *env_name);
 int to_path(const char *Pathbuffer);
-void show_prompt(basicshell *parameter);
-int fork_shell(char *cmd, char **argument, char *cmd_in);
+
+int execute_err(char *cmd, char *cmd_in, int amounts);
+
 
 #endif

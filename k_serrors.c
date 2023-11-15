@@ -30,6 +30,7 @@ int execute_err(char *cmd, char *cmd_in, int amounts)
 	strcat(err_msg, ": ");
 	strcat(err_msg, cmd);
 	strcat(err_msg, ": not found\n");
+	strcat(err_msg, "\0");
 
 	write(STDOUT_FILENO, err_msg, strlen(err_msg));
 	free(counts);

@@ -55,7 +55,7 @@ char *conItoA(int number)
 	}
 	while (n > 0)
 	{
-		buffer[length] = (n % 10) + '0';
+		buffer[length - 1] = (n % 10) + '0';
 		n = n / 10;
 		length--;
 	}
