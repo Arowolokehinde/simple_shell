@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * ksget_line - function gets input from the user
  * @line: pointer to the input command given by the user
@@ -10,8 +9,7 @@
 ssize_t ksget_line(char **line, size_t *len, FILE *stream)
 {
 	static char str_in[HIGHEST_CMD_ARG];
-	static size_t str_index;
-	static size_t str_size ; /** str is buffer */
+	static size_t str_index, str_size;/** str is buffer */
 	size_t i = 0;
 	char p;
 
@@ -36,7 +34,7 @@ ssize_t ksget_line(char **line, size_t *len, FILE *stream)
 					return (-1);
 			} else
 			{
-				(*line)[i] = '\0'; /*Null terminating string*/
+				(line)[i] = '\0'; /**Null terminating string*/
 				return (i);
 			}
 		} str_index = 0;

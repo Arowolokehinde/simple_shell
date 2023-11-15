@@ -2,7 +2,7 @@
 
 /**
  * get_environment - Function that gets the name of  a path from environment
- * @environment_name: This is the name of the path in the environment
+ * @env_name: This is the name of the path in the environment
  *
  * Return: Always success
  */

@@ -13,11 +13,13 @@ int execute_start(const char *pathbuffer)
 	if (stat(pathbuffer, &filestart) == 0)
 	{
 		if (S_ISREG(filestart.st_mode) && (filestart.st_mode & S_IXUSR))
+		{
 			return (1);
+		}
 		else
 		{
 			fprintf(stderr, "Error: File is not executable.\n");
-			return 0;
+			return (0);
 		}
 	}
 	return (0);
